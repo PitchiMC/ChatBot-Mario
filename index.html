@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatBot de la Liön</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+    <h1 class="header">🍫Penner Firma 🍫</h1>
+    
+    <p>das wars auch schon.<br> Wir verkaufen auch nichts lol. <br> Kannst ja den Chatbot ausprobieren :).<br> Das ist unser ganzer Stolz</p>
+    <button class="chat-toggle" onclick="toggeChatContainer()">🤖</button>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">Chatbot</div>
+        <div class="chat-body" id="chat-body">
+            <div class="message bot">Hallo! Wie kann ich dir helfen?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Nachricht eingeben..." />
+            <button onclick="sendMessage()">Senden</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
