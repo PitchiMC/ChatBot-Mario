@@ -1,37 +1,42 @@
+/* Basis */
 body {
     font-family: Arial, sans-serif;
     background: #f2f2f2;
     margin: 0;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 /* Chat-Container */
 .chat-container {
     background: white;
-    width: 35vh;
-    height: 50vh;
-    border-radius: 1vh;
-    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.2);
+    width: 90vw;        /* Breite passt sich Bildschirm an */
+    max-width: 400px;   /* Maximalbreite auf PC */
+    height: 60vh;       /* Höhe relativ zum Bildschirm */
+    max-height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
-    position: fixed;
-    right: 7vh;
-    bottom: 9vh;
     flex-direction: column;
     overflow: hidden;
+    position: fixed;
+    right: 3.5vw;
+    bottom: 10vh;
     visibility: hidden;
 }
 
+/* Header */
 .chat-header {
     background: #0078ff;
     color: white;
     padding: 1vh;
     font-weight: bold;
     text-align: center;
+    font-size: clamp(16px, 2vh, 24px); /* min, ideal, max */
 }
 
+/* Chat-Body */
 .chat-body {
     flex: 1;
     padding: 1vh;
@@ -43,8 +48,9 @@ body {
 .message {
     padding: 0.8vh 1.2vh;
     margin: 0.6vh 0;
-    border-radius: 1.2vh;
-    max-width: 80vh;
+    border-radius: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
 }
 
 .user {
@@ -58,25 +64,25 @@ body {
     align-self: flex-start;
 }
 
-/* Eingabebereich */
 .chat-input {
     display: flex;
-    border-top: 0.1vh solid #ddd;
+    border-top: 1px solid #ddd;
 }
 
 .chat-input input {
     flex: 1;
     border: none;
     padding: 1vh;
-    font-size: 1.6vh;
+    font-size: clamp(14px, 2vh, 20px);
 }
 
 .chat-input button {
     background: #0078ff;
     color: white;
     border: none;
-    padding: 1vh 1.5vh;
+    padding: 1vh 1vw;
     cursor: pointer;
+    font-size: clamp(14px, 2vh, 20px);
 }
 
 .chat-input input:focus {
@@ -86,16 +92,16 @@ body {
 .chat-toggle {
     position: fixed;
     bottom: 2vh;
-    right: 2vh;
+    right: 2vw;
     background: #0078ff;
     color: white;
     border: none;
     border-radius: 50%;
-    width: 6vh;
-    height: 6vh;
-    font-size: 3vh;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
     cursor: pointer;
-    box-shadow: 0 0 1vh rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .chat-toggle:hover {
@@ -105,5 +111,37 @@ body {
 .header {
     position: fixed;
     top: 1vh;
-    font-size: 4vh;
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 200;
+}
+
+body p {
+    font-size: clamp(16px, 4vw, 32px);
+}
+
+.text {
+    padding: 10vw;
+}
+
+@media (max-width: 600px) {
+    .chat-container {
+        width: 95vw;
+        height: 60vh;
+        right: 2.5vw;
+        bottom: 10vh;
+    }
+
+    .chat-toggle {
+        width: 10vw;
+        height: 10vw;
+        font-size: 6vw;
+    }
+
+    .chat-header, .chat-input input, .chat-input button {
+        font-size: clamp(14px, 3vw, 20px);
+    }
+
+    body p, .header {
+        font-size: clamp(16px, 5vw, 28px);
+    }
 }

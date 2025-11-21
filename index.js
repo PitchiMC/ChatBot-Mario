@@ -29,7 +29,6 @@ function sendMessage() {
 function getAnswer(input) {
     input = input.toLowerCase();
 
-    if (input.includes("nigger") || input.includes("nigga")) return "Wir unterstützen keine diskriminierenden Aussagen.";
     if (input.includes("wer") && (input.includes("du") || input.includes("bist"))) return "Ich bin ein Chatbot. Wie kann ich dir helfen?";
     if (input.includes("was") && input.includes("das")) return "Das ist eine Firmen Seite";
     if ((input.includes("wo") || input.includes("was")) && (input.includes("kauf") || input.includes("bekomm") || input.includes("bekomm"))) return "Schau dafür mal in unserem Online Shop nach.";
