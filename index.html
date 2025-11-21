@@ -14,9 +14,21 @@
     <h1 class="header">Chatbot Mario</h1>
     
     <p class="text" >Hier kommt noch irgendetwas hin :)<br>Chatbot ist unten rechts.<br><br>Fehler bitte beim Dev melden</p>
+
     <button class="chat-toggle" onclick="toggeChatContainer()">🤖</button>
+
     <div class="chat-container" id="chat-container">
+
         <div class="chat-header">Chatbot</div>
+        <div class="common-questions-container">
+            <a onclick=ask_common_question(studentamount) class="common-question">Wieviele Schüler hat diese Schule?</a> <br>
+            <a onclick=ask_common_question(uwenummer) class="common-question">Was ist Uwes Telefonnummer?</a> <br>
+            <a onclick=ask_common_question(pausenlänge) class="common-question">Wie lang sind die Pausen?</a> <br>
+            <a onclick=ask_common_question(pausenlänge) class="common-question">Welche AGs gibt es?</a> <br>
+            <a onclick=ask_common_question(pausenlänge) class="common-question">Wie ist das Nachhilfe angebot?</a> <br>
+            <a onclick=ask_common_question(pausenlänge) class="common-question">Wo finde ich die Email Adresse der Lehrer?</a> <br>
+
+        </div>
         <div class="chat-body" id="chat-body">
             <div class="message bot">Hallo! Wie kann ich dir helfen?</div>
         </div>

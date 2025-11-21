@@ -10,12 +10,12 @@ body {
 
 /* Chat-Container */
 .chat-container {
-    background: white;
+    background: rgb(126, 130, 133);
     width: 90vw;        /* Breite passt sich Bildschirm an */
     max-width: 400px;   /* Maximalbreite auf PC */
     height: 60vh;       /* Höhe relativ zum Bildschirm */
     max-height: 600px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -23,7 +23,12 @@ body {
     position: fixed;
     right: 3.5vw;
     bottom: 10vh;
-    visibility: hidden;
+    opacity: calc(0%);
+    transition: opacity 0.1s;
+}
+
+.chat-container.visible {
+    opacity: calc(100%);
 }
 
 /* Header */
@@ -34,6 +39,28 @@ body {
     font-weight: bold;
     text-align: center;
     font-size: clamp(16px, 2vh, 24px); /* min, ideal, max */
+}
+
+.common-questions-container {
+    padding: 1vh;
+    background-color: rgb(95, 95, 95);
+    color: rgb(67, 165, 245);
+    position: relative;
+    max-height: 6vh;
+    overflow-y: auto;
+    border-top: #3d3d3d 1px;
+}
+
+.common-question {
+    font-size: 1.9vh;
+    transition: all 0.1s;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.common-question:hover {
+    cursor: pointer;
+    color: rgb(86, 179, 255);
 }
 
 /* Chat-Body */
@@ -54,19 +81,20 @@ body {
 }
 
 .user {
-    background: #0078ff;
+    background: #0071f3;
     color: white;
     align-self: flex-end;
 }
 
 .bot {
-    background: #e6e6e6;
+    background: #363636;
     align-self: flex-start;
+    color: white;
 }
 
 .chat-input {
     display: flex;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #757575;
 }
 
 .chat-input input {
@@ -74,6 +102,8 @@ body {
     border: none;
     padding: 1vh;
     font-size: clamp(14px, 2vh, 20px);
+    background-color: rgb(175, 175, 175);
+    color: rgb(27, 28, 29);
 }
 
 .chat-input button {

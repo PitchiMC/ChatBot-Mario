@@ -1,7 +1,14 @@
 function toggeChatContainer() {
     const chatContainer = document.getElementById('chat-container');
-    if (chatContainer.style.visibility === "hidden") { chatContainer.style.visibility = "visible"; }
-    else { chatContainer.style.visibility = "hidden"; }
+    if (chatContainer.classList.contains("visible")) {
+        chatContainer.classList.remove("visible");
+    } else {
+        chatContainer.classList.add("visible")
+    }
+}
+
+function ask_common_question(question_type) {
+    
 }
 
 
