@@ -123,19 +123,26 @@ body {
     position: fixed;
     bottom: 2vh;
     right: 2vw;
-    background: #0078ff;
+
+    background-color: #0078ff;
+    background-image: url("assets/img/bot.png");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+
     color: white;
     border: none;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     font-size: 24px;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+
 .chat-toggle:hover {
-    background: #0070e0;
+    background-color: #0070e0;
 }
 
 .header {

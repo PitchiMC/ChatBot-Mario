@@ -41,7 +41,7 @@ function getAnswer(input) {
     if ((input.includes("wo") || input.includes("was")) && (input.includes("kauf") || input.includes("bekomm") || input.includes("bekomm"))) return "Schau dafür mal in unserem Online Shop nach.";
     if (input.includes("wie") && input.includes("funktion")) return "Ich erkenne Schlüsselwörter in deiner Nachricht (bei dieser hier zum Beispiel: 'wie' und 'funktion') und antworte entsprechend darauf.";
     if (input.includes("hilfe")) return "Klar, wobei brauchst du Hilfe?";
-    if ((input.includes("hi") || input.includes("hey") || input.includes("hallo") || input.includes("hi") || (input.includes("was") && input.includes("geh"))) && !(input.includes("hier"))) return "Hallo, wie kann ich dir helfen?";
+    if ((input.includes("hi") || input.includes("hey") || input.includes("hallo") || input.includes("hi") || (input.includes("was") && input.includes("ge"))) && !(input.includes("hier"))) return "Hallo, wie kann ich dir helfen?";
 
     const testKeywords = ["test", "abcde", "12345", "lorem"];
 
