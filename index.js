@@ -7,30 +7,58 @@ function toggeChatContainer() {
     }
 }
 
-function ask_common_question(question_type) {
-    
+function ask_common_question(question) {
+    if (typeof question !== "string") {
+        throw new Error("question_type must be a string");
+    }
+
+    console.log(question);
+    sendMessage(question)
 }
 
 
-function sendMessage() {
-    const input = document.getElementById('user-input');
-    const chatBody = document.getElementById('chat-body');
-    const text = input.value.trim();
-    if (text === '') return;
 
-    const userMsg = document.createElement('div');
-    userMsg.className = 'message user';
-    userMsg.textContent = text;
-    chatBody.appendChild(userMsg);
+function sendMessage(question) {
+    if (typeof question !== "string" || question === null) {
+        const input = document.getElementById('user-input');
+        const chatBody = document.getElementById('chat-body');
+        const text = input.value.trim();
+        if (text === '') return;
 
-    const botMsg = document.createElement('div');
-    botMsg.className = 'message bot';
-    botMsg.textContent = getAnswer(text);
-    chatBody.appendChild(botMsg);
+        const userMsg = document.createElement('div');
+        userMsg.className = 'message user';
+        userMsg.textContent = text;
+        chatBody.appendChild(userMsg);
 
-    input.value = '';
+        const botMsg = document.createElement('div');
+        botMsg.className = 'message bot';
+        botMsg.textContent = getAnswer(text);
+        chatBody.appendChild(botMsg);
 
-    chatBody.scrollTop = chatBody.scrollHeight;
+        input.value = '';
+
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+    } else {
+        if (typeof question === "string" && question !== "") {
+            const chatBody = document.getElementById('chat-body');
+            const text = question.trim();
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message user';
+            userMsg.textContent = text;
+            chatBody.appendChild(userMsg);
+
+            const botMsg = document.createElement('div');
+            botMsg.className = 'message bot';
+            botMsg.textContent = getAnswer(text);
+            chatBody.appendChild(botMsg);
+
+            input.value = '';
+
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    }
 }
 
 function getAnswer(input) {

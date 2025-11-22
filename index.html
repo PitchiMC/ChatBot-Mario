@@ -20,17 +20,16 @@
     <div class="chat-container" id="chat-container">
 
         <div class="chat-header">Chatbot</div>
-        <div class="common-questions-container">
-            <a onclick=ask_common_question(studentamount) class="common-question">Wieviele Schüler hat diese Schule?</a> <br>
-            <a onclick=ask_common_question(uwenummer) class="common-question">Was ist Uwes Telefonnummer?</a> <br>
-            <a onclick=ask_common_question(pausenlänge) class="common-question">Wie lang sind die Pausen?</a> <br>
-            <a onclick=ask_common_question(pausenlänge) class="common-question">Welche AGs gibt es?</a> <br>
-            <a onclick=ask_common_question(pausenlänge) class="common-question">Wie ist das Nachhilfe angebot?</a> <br>
-            <a onclick=ask_common_question(pausenlänge) class="common-question">Wo finde ich die Email Adresse der Lehrer?</a> <br>
-
-        </div>
+        
         <div class="chat-body" id="chat-body">
-            <div class="message bot">Hallo! Wie kann ich dir helfen?</div>
+            <div class="message general">
+                <h3 style="max-height: 5%;">Häufig gestellte Fragen:</h3>
+                <a onclick="ask_common_question('schuelermenge')" class="common-question">Wieviele Schüler hat diese Schule?</a> <br>
+                <a onclick="ask_common_question('uwenummer')" class="common-question">Was ist Uwes Telefonnummer?</a> <br>
+                <a onclick="ask_common_question('pausenlänge')" class="common-question">Wie lang sind die Pausen?</a> <br>
+                <a onclick="ask_common_question('ags')" class="common-question">Welche AGs gibt es?</a> <br>
+                <a onclick="ask_common_question('nachhilfeangebote')" class="common-question">Wie ist das Nachhilfe angebot?</a> <br>
+                <a onclick="ask_common_question('lehreremail')" class="common-question">Wo finde ich die Email Adresse der Lehrer?</a></div>
         </div>
         <div class="chat-input">
             <input type="text" id="user-input" placeholder="Nachricht eingeben..." />
