@@ -11,21 +11,34 @@
 <body>
 
 
-    <h1 class="header">Chatbot Mario</h1>
+    <h1 class="header" style="text-decoration: underline;">Chatbot Mario</h1>
     
-    <p class="text" >Hier kommt noch irgendetwas hin :)<br>Chatbot ist unten rechts.<br><br>Fehler bitte beim Dev melden</p>
+    <p class="text" >Chatbot ist unten rechts.<br>Fehler bitte melden</p>
 
     <button class="chat-toggle" onclick="toggeChatContainer()"> </button>
 
     <div class="chat-container" id="chat-container">
 
-        <div class="chat-header">Chatbot</div>
+        <div class="chat-head">
+            <div class="chat-header">Chatbot Mario</div>
+            <div class="chat-head-info-btn" onclick="toggle_info_visibility()">i</div>
+        </div>
+
+        <div class="chat-head-info-overlay" id="info-overlay">
+            <div class="chat-head-info-text">
+                Der Bot läuft vollständig auf Ihrem Gerät und sammelt keinerlei Daten!<br>
+                Es können Fehler auftreten, da dieser Chatbot noch nicht vollständig programmiert und getestet wurde. <br><br>
+                © 2025 Tim N.
+            </div>
+            <button onclick="toggle_info_visibility()" class="chat-info-okay-button">Okay</button>
+    </div>
+
+
         
         <div class="chat-body" id="chat-body">
             <div class="message general">
                 <h3 style="max-height: 5%;">Häufig gestellte Fragen:</h3>
                 <a onclick="ask_common_question('schuelermenge')" class="common-question">Wieviele Schüler hat diese Schule?</a> <br>
-                <a onclick="ask_common_question('uwenummer')" class="common-question">Was ist Uwes Telefonnummer?</a> <br>
                 <a onclick="ask_common_question('pausenlänge')" class="common-question">Wie lang sind die Pausen?</a> <br>
                 <a onclick="ask_common_question('ags')" class="common-question">Welche AGs gibt es?</a> <br>
                 <a onclick="ask_common_question('nachhilfeangebote')" class="common-question">Wie ist das Nachhilfe angebot?</a> <br>
@@ -33,9 +46,15 @@
         </div>
         <div class="chat-input">
             <input type="text" id="user-input" placeholder="Nachricht eingeben..." />
-            <button onclick="sendMessage()">Senden</button>
+            <img src="assets/img/sendbutton.png" onclick="sendMessage()"/>
         </div>
     </div>
+
+    <p style="position: fixed; bottom: 0.5%; left: 0.5%; font-size: 1.5vh;">© 2025 Tim N. <br>
+
+        Die Nutzung ist ausschließlich für schulische Zwecke gestattet. <br>
+        Jede kommerzielle Nutzung, Weitergabe oder Vervielfältigung erfordert meine vorherige Zustimmung.
+    </p>
 
     <script src="index.js"></script>
 

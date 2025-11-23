@@ -7,6 +7,16 @@ function toggeChatContainer() {
     }
 }
 
+function toggle_info_visibility() {
+    const overlay = document.getElementById("info-overlay");
+    if (overlay.classList.contains("visible")) {
+        overlay.classList.remove("visible")
+    } else {
+        overlay.classList.add("visible")
+    }
+}
+
+
 function ask_common_question(question) {
     if (typeof question !== "string") {
         throw new Error("question_type must be a string");
@@ -53,8 +63,6 @@ function sendMessage(question) {
             botMsg.className = 'message bot';
             botMsg.textContent = getAnswer(text);
             chatBody.appendChild(botMsg);
-
-            input.value = '';
 
             chatBody.scrollTop = chatBody.scrollHeight;
         }
