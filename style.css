@@ -85,7 +85,6 @@ body {
     z-index: 999;
 }
 
-/* Overlay Text */
 .chat-head-info-text {
     font-size: 100%;
     line-height: 1.3;
@@ -99,19 +98,21 @@ body {
 
 .chat-info-okay-button {
     font-size: 200%;
-    padding-left: 3vh;
-    padding-right: 3vh;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
     padding-top: 0.3vh;
     padding-bottom: 0.3vh;
     background-color: rgb(76, 241, 25);
     border: 1px solid rgb(0, 247, 0);
+    color: white;
     border-radius: 10px;
-    justify-self: center;
+    
     position: relative;
-    left: 30%;
-    right: 30%;
     top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     max-width: 25vw;
+    
     transition: background-color 0.2s, border 0.2s;
 }
 
@@ -119,6 +120,7 @@ body {
     background-color: rgb(60, 255, 0);
     border: 1px solid rgb(6, 255, 6);
     cursor: pointer;
+    transform: translateX(-50%);
 }
 
 
