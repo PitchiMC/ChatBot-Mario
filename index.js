@@ -49,11 +49,12 @@ async function getAnswer(userquestion) {
     }
 
     try {
-        const res = await fetch("http://localhost:8080/question", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ question: userquestion })
-        });
+        const res = await fetch("https://chatbot-api-24ly.onrender.com/question", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: userquestion })
+    });
+
 
         const data = await res.json();
         return String(data.answer || "toll");
